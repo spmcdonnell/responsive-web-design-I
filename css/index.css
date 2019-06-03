@@ -218,14 +218,18 @@ a.call-to-action:hover {
 
 body.home main {
   padding: 4% 0;
-  border-top: 1px solid #737373;
-  border-bottom: 1px solid #737373;
+  border-bottom: 2px solid #000;
 }
 
 section.two-column,
 section.three-column {
   display: flex;
   justify-content: space-between;
+}
+
+section.two-column {
+  border-top: 2px solid #000;
+  padding-top: 50px;
 }
 
 section.two-column > div,
@@ -236,12 +240,6 @@ section.three-column > div {
 section.two-column > div:last-child,
 section.three-column > div:last-child {
   margin-right: 0;
-}
-
-section.two-column > div {
-}
-
-section.three-column > div {
 }
 
 section.three-column > div:first-child {
