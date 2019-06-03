@@ -351,6 +351,80 @@ div.creds {
 }
 
 /* -------------------------------------
+HAMBURGER MENU
+-------------------------------------- */
+.delicious-hamburger {
+  position: absolute;
+  right: 20px;
+  top: 13px;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  z-index: 1;
+  display: none;
+}
+
+.delicious-hamburger:hover {
+  cursor: pointer;
+}
+
+/* Closed */
+.hamburger-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border: none !important;
+  outline: none !important;
+}
+
+.beef-pattie {
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.beef-pattie:before,
+.beef-pattie:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  left: 0;
+}
+
+.beef-pattie:before {
+  top: -7px;
+}
+
+.beef-pattie:after {
+  bottom: -7px;
+}
+
+/* Open */
+
+body.nav-open .beef-pattie {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+body.nav-open .beef-pattie:before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+body.nav-open .beef-pattie:after {
+  top: 0;
+}
+
+/* -------------------------------------
 MEDIA QUERIES
 -------------------------------------- */
 
@@ -395,6 +469,10 @@ MEDIA QUERIES
 
   header div.main-logo {
     margin: 3% 0;
+  }
+
+  .delicious-hamburger {
+    display: block;
   }
 
   nav ul {
@@ -461,5 +539,15 @@ MEDIA QUERIES
   div.creds {
     text-align: center;
     margin-top: 40px;
+  }
+
+  header div.primary-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s linear;
+  }
+
+  body.nav-open header div.primary-nav {
+    max-height: 300px;
   }
 }

@@ -27,6 +27,11 @@
         </div>
         <div class="main-logo">
           <a href="index.html"><img class="logo" src="img/logo.png" alt="Great Idea! Company logo."></a>
+          <button class="delicious-hamburger">
+            <span class="hamburger-wrap">
+              <span class="beef-pattie" />
+            </span>
+        </button>
         </div>
       </header>
       <main>
@@ -78,4 +83,15 @@
       </footer>
     </div>
   </body>
+  <script type="text/javascript">
+    var body = document.querySelector('body');
+    var hamburger = document.querySelector('.delicious-hamburger');
+    hamburger.addEventListener('click', function() {
+      if (body.classList.contains('nav-open')) {
+        body.classList.remove('nav-open');
+      } else {
+        body.classList.add('nav-open');
+      }
+    });
+  </script>
 </html>
